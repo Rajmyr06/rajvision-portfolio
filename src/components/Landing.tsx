@@ -29,17 +29,8 @@ const Landing = ({ children }: PropsWithChildren) => {
               <div className="landing-h2-info">{config.hero.secondaryRole}</div>
             </h2>
           </div>
-          {/* Mobile photo - shows only on mobile when 3D character is hidden */}
-          <div className="mobile-photo">
-            <img
-              src="/images/profile/rohit-raj-mark.webp"
-              alt="Rajvision mark for Rohit Raj"
-              width="720"
-              height="720"
-            />
-          </div>
+          <div className="mobile-character-stage">{children}</div>
         </div>
-        {children}
       </div>
     </>
   );

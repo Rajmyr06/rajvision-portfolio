@@ -1,4 +1,10 @@
-import { PropsWithChildren, useEffect, useState } from "react";
+import {
+  lazy,
+  PropsWithChildren,
+  Suspense,
+  useEffect,
+  useState,
+} from "react";
 import About from "./About";
 import Career from "./Career";
 import Contact from "./Contact";
@@ -11,6 +17,10 @@ import Work from "./Work";
 import TechStackNew from "./TechStackNew";
 import CallToAction from "./CallToAction";
 import setSplitText from "./utils/splitText";
+
+const MobileCharacterModel = lazy(
+  () => import("./Character/MobileScene")
+);
 
 const MainContainer = ({ children }: PropsWithChildren) => {
   const [isDesktopView, setIsDesktopView] = useState<boolean>(
@@ -36,7 +46,19 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <SocialIcons />
       {isDesktopView && children}
       <main className="page-content" id="main-content">
-        <Landing />
+        <Landing>
+          {!isDesktopView && (
+            <Suspense
+              fallback={
+                <div className="mobile-character-loader" aria-hidden="true">
+                  <span />
+                </div>
+              }
+            >
+              <MobileCharacterModel />
+            </Suspense>
+          )}
+        </Landing>
         <About />
         <WhatIDo />
         <Career />
