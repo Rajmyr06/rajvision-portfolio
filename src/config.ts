@@ -42,7 +42,7 @@ export const config = {
   about: {
     title: "About Me",
     description:
-      "I am an Informatics undergraduate focused on building reliable web applications and exploring practical machine learning. My work spans Laravel-based backend systems, responsive product interfaces, and reproducible data analysis using interpretable models. A background in UI/UX and multimedia helps me connect technical decisions with clear, useful, and visually coherent user experiences.",
+      "I’m an Informatics undergraduate and aspiring Laravel Full-Stack Software Engineer focused on building reliable, maintainable web applications. My work covers Laravel-based backend systems, database design, REST APIs, authentication, responsive interfaces, and applied machine learning for real-world problems. With a background in UI/UX and multimedia, I approach software as both an engineering system and a user-centered product combining clean implementation with functional and visually coherent experiences.",
   },
   experiences: [
     {
