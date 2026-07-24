@@ -59,3 +59,6 @@ node_modules/
 
 # Local screenshots and recordings
 screen-capture*
+
+# Local Netlify folder
+.netlify
