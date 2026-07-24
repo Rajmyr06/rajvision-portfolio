@@ -112,11 +112,19 @@
     font-size: 24px !important;
     color: var(--accentColor);
     font-weight: 700;
+    -webkit-text-fill-color: currentColor;
   }
 
   .landing-h2-info {
     font-size: 18px !important;
     color: rgba(255, 255, 255, 0.9);
+  }
+
+  h2.landing-info-h2 {
+    background: none !important;
+    background-clip: border-box !important;
+    -webkit-background-clip: border-box !important;
+    -webkit-text-fill-color: var(--accentColor) !important;
   }
 
   .landing-info-h2::after {
