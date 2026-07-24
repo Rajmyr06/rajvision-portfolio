@@ -11,6 +11,24 @@ export let lenis: Lenis | null = null;
 
 const Navbar = () => {
   useEffect(() => {
+    const isCompactView = window.innerWidth <= 1024;
+
+    // Compact layouts use native scrolling. Initializing Lenis and immediately
+    // stopping it can leave the document locked when the desktop splash is
+    // intentionally skipped.
+    if (isCompactView) {
+      document.documentElement.classList.remove(
+        "lenis",
+        "lenis-stopped",
+        "lenis-locked",
+        "lenis-scrolling",
+        "lenis-smooth"
+      );
+      document.documentElement.style.overflowY = "auto";
+      document.body.style.overflowY = "auto";
+      return;
+    }
+
     // Initialize Lenis smooth scroll
     lenis = new Lenis({
       duration: 1.15,

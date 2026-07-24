@@ -14,8 +14,8 @@ const Work = () => {
     .slice(0, 5);
 
   useEffect(() => {
-    // Disable pinning on mobile to allow scrolling
-    if (window.innerWidth <= 768) return;
+    // Compact layouts use a normal vertical project flow.
+    if (window.innerWidth <= 1024) return;
 
     let translateX: number = 0;
 
